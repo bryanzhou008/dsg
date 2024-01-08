@@ -18,14 +18,21 @@ def openai_completion(
 	max_tokens=500,
 	):
 
-	resp = openai.ChatCompletion.create(
+	# resp = openai.ChatCompletion.create(
+	# 		model=model,
+	# 		messages=[{"role": "user", "content": prompt}],
+	# 		temperature=temperature,
+	# 		max_tokens=max_tokens,
+	# 	)
+	
+	resp = openai.chat.completions.create(
 			model=model,
 			messages=[{"role": "user", "content": prompt}],
-			temperature=temperature,
+   			temperature=temperature,
 			max_tokens=max_tokens,
 		)
 	
 	if return_response:
 		return resp
 
-	return resp['choices'][0]['message']['content']
+	return resp.choices[0].message.content
