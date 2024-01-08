@@ -2,7 +2,7 @@
 import time
 import openai
 
-def openai_setup(key_path='./_OAI_KEY.txt'):
+def openai_setup(key_path='/local1/bryanzhou008/ecole/keys/_OAI_KEY.txt'):
 	with open(key_path) as f:
 		key = f.read().strip()
 
